@@ -1,19 +1,19 @@
 <div class="recipe recipe-list-item">
             <div class="recipe-cover">
-                <img src="https://via.placeholder.com/1280x720/269fe6.png" alt="temporario">
+                <img src={{ recipe.cover.url }}>
             </div>
             <div class="recipe-title-container">
-                <h2 class="recipe-title">Doce de batata doce sem doce</h2>
+                <h2 class="recipe-title">{{ recipe.title }}</h2>
             </div>
             <div class="recipe-author">
-                <span class="recipe-author-item"><i class="fas fa-user"></i>Fabio Darad</span>
-                <span class="recipe-author-item"><i class="fas fa-calendar-alt"></i>09/04/2022</span>
+                <span class="recipe-author-item"><i class="fas fa-user"></i>{{ recipe.author.first_name }} {{ recipe.author.last_name }}</span>
+                <span class="recipe-author-item"><i class="fas fa-calendar-alt"></i>{{ recipe.created_at }}</span>
                 <a href="">
-                    <span class="recipe-author-item"><i class="fas fa-layer-group"></i>Café da Manhã</span>
+                    <span class="recipe-author-item"><i class="fas fa-layer-group"></i>{{ recipe.category.name }}</span>
                 </a>
             </div>
             <div class="recipe-content">
-                <p>Loren ipsum dolor </p>
+                <p> {{ recipe.description }}</p>
             </div>
             <div class="recipe-meta-container">
                 <div class="recipe-meta recipe-preparation">
@@ -22,7 +22,7 @@
                         Preparo
                     </h3>
                     <div class="recipe-meta-text">
-                        0 minutos
+                       {{ recipe.preparation_time }} {{ recipe.preparation_time_unit }}
                     </div>
                 </div>
                 <div class="recipe-meta recipe-servings">
@@ -31,15 +31,15 @@
                         Porções
                     </h3>
                     <div class="recipe-meta-text">
-                        10 porções
+                        {{ recipe.servings }} {{ recipe.servings_unit }}
                     </div>
 
                 </div>
             </div>
             <footer class="recipe-footer">
-                <a class="recipe-read-more button button-dark button-full-width" href="">
+                <a class="recipe-read-more button button-dark button-full-width" href="/recipes/7">
                     <i class="fas fa-eye"></i>
                     ver mais...
                 </a>
             </footer>
-        </div>
+</div>

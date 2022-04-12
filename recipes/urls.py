@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.urls import path
-from recipes.views import home
+from . import views
 
 urlpatterns = [
-    path('', home),
+    path('', views.home),
+    path('recipes/<int:id>/', views.recipe), #'recipe' é a view e 'recipes' é o url que quero mostrar no browser
 
 ]
